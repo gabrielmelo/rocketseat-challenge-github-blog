@@ -1,1 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+	--font-sans: "Nunito", "sans-serif";
+
+	--color-blue-950: #040f1a;
+	--color-blue-900: #071422;
+	--color-blue-800: #0b1b2b;
+	--color-blue-500: #112131;
+	--color-blue-400: #1c2f41;
+	--color-blue-300: #3a536b;
+	--color-blue-200: #7b96b2;
+	--color-blue-100: #afc2d4;
+	--color-blue-50: #c4d4e3;
+
+	--color-off-white: #e7edf4;
+	--color-accent: #3294f8;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+	color: var(--color-off-white);
+}
+
+code {
+	background-color: var(--color-blue-200);
+	padding: 20px;
+	display: block;
+}

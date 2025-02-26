@@ -6,4 +6,11 @@ Follow these steps to set up the project on your local machine.
 
 ### Prerequisites
 - Node.js
-- npm or pnpm
+
+### Tasks
+- [ ] Create Profile
+- [ ] Create Post Card
+- [ ] Create Search From
+- [ ] Create Page Article
+- [ ] Create Article base styles
+- [ ] Create fech article
