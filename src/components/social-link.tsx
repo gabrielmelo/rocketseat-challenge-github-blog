@@ -1,16 +1,11 @@
 import type { ComponentProps } from 'react'
-import { Link } from 'react-router'
 
-interface SocialLinkProps extends ComponentProps<'a'> {}
+interface SocialLinkProps extends ComponentProps<'div'> {}
 
-export function SocialLink({ children, ...props }: SocialLinkProps) {
+export function SocialLink({ children }: SocialLinkProps) {
 	return (
-		<Link
-			to="#"
-			className="flex h-6 gap-2 font-sans text-base/relaxed text-off-white"
-			{...props}
-		>
+		<div className="flex h-6 gap-2 font-sans text-base/relaxed text-off-white">
 			{children}
-		</Link>
+		</div>
 	)
 }

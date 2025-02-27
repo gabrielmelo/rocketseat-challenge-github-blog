@@ -62,11 +62,7 @@ export function Post() {
 							directly associated with any particular value type, and any
 							variable can be assigned (and re-assigned) values of all types:
 						</p>
-						<code>
-							let foo = 42;
-							foo = ‘bar’;
-							string foo = true;
-						</code>
+						<code>let foo = 42; foo = ‘bar’; string foo = true;</code>
 					</div>
 				</div>
 			</Cover>

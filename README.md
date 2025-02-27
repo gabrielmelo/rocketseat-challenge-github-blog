@@ -8,8 +8,8 @@ Follow these steps to set up the project on your local machine.
 - Node.js
 
 ### Tasks
-- [ ] Create Profile
-- [ ] Create Post Card
+- [ x ] Create Profile
+- [ x ] Create Post Card
 - [ ] Create Search From
 - [ ] Create Page Article
 - [ ] Create Article base styles
