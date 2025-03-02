@@ -1,8 +1,5 @@
-import { api } from "../lib/axios"
-
-interface GetUserProfileParams {
-	username: string
-}
+import { env } from '../env'
+import { api } from '../lib/axios'
 
 export interface GetUserProfileResponse {
 	name: string
@@ -15,9 +12,10 @@ export interface GetUserProfileResponse {
 	avatar_url: string
 }
 
-export async function getUserProfile({ username }: GetUserProfileParams) {
-
-	const response = await api.get<GetUserProfileResponse>(`/users/${username}`)
+export async function getUserProfile() {
+	const response = await api.get<GetUserProfileResponse>(
+		`/users/${env.VITE_GITHUB_LOGIN}`,
+	)
 
 	return response.data
 }

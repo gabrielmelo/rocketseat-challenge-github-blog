@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { queryClient } from './lib/query-client'
 import { App } from './pages/app'
 import { Post } from './pages/post'
-import { Posts } from './pages/posts'
 
 // biome-ignore lint: noUnusedVariables
 createRoot(document.getElementById('root')!).render(
@@ -14,8 +13,7 @@ createRoot(document.getElementById('root')!).render(
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<App />} />
-					<Route path="/post" element={<Post />} />
-					<Route path="/posts" element={<Posts />} />
+					<Route path="/post/:repo/:number" element={<Post />} />
 				</Routes>
 			</BrowserRouter>
 		</QueryClientProvider>
