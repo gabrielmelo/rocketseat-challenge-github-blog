@@ -43,7 +43,7 @@ function ProfileCallToAction({ url }: { url: string }) {
 }
 
 function ProfileContent({ children }: ComponentProps<'div'>) {
-	return <div className='flex grow flex-col gap-6'>{children}</div>
+	return <div className="flex grow flex-col gap-6">{children}</div>
 }
 
 function ProfileSocialContent({ children }: ComponentProps<'div'>) {
@@ -51,63 +51,63 @@ function ProfileSocialContent({ children }: ComponentProps<'div'>) {
 }
 
 export function Profile({
-		name,
-		bio,
-		avatarUrl,
-		html_url,
-		login,
-		company,
-		followers,
-	}: ProfileProps) {
-		return (
-			<div
-				className="flex w-[864px] rounded-xl bg-blue-800 px-10 py-8"
-				style={{ backgroundImage: '/images/profile-bg.jpg' }}
-			>
-				<div className="mr-6 h-auto w-full max-w-[158px] grow-0 lg:mr-6">
-					<img
-						className="aspect-square overflow-hidden rounded-xl object-contain object-center"
-						alt=""
-						src={avatarUrl}
-						width={158}
-						height={158}
-					/>
+	name,
+	bio,
+	avatarUrl,
+	html_url,
+	login,
+	company,
+	followers,
+}: ProfileProps) {
+	return (
+		<div
+			className="flex w-[864px] rounded-xl bg-blue-800 px-10 py-8"
+			style={{ backgroundImage: '/images/profile-bg.jpg' }}
+		>
+			<div className="mr-6 h-auto w-full max-w-[158px] grow-0 lg:mr-6">
+				<img
+					className="aspect-square overflow-hidden rounded-xl object-contain object-center"
+					alt=""
+					src={avatarUrl}
+					width={158}
+					height={158}
+				/>
+			</div>
+
+			<ProfileContent>
+				<div className="flex justify-between">
+					<span className="font-bold text-2xl text-off-white">{name}</span>
+
+					{html_url && <ProfileCallToAction url={html_url} />}
 				</div>
 
-				<ProfileContent>
-					<div className="flex justify-between">
-						<span className="font-bold text-2xl text-off-white">{name}</span>
+				{bio && <ProfileBio>{bio}</ProfileBio>}
 
-						{html_url && <ProfileCallToAction url={html_url} />}
-					</div>
+				<ProfileSocialContent>
+					{login && (
+						<SocialLink>
+							<img src="/icons/github.svg" alt="Github" />
+							<span>{login}</span>
+						</SocialLink>
+					)}
 
-					{bio && <ProfileBio>{bio}</ProfileBio>}
+					{company && (
+						<SocialLink>
+							<img src="/icons/company.svg" alt="Company" />
+							<span>{company}</span>
+						</SocialLink>
+					)}
 
-					<ProfileSocialContent>
-						{login && (
-							<SocialLink>
-								<img src="/icons/github.svg" alt="Github" />
-								<span>{login}</span>
-							</SocialLink>
-						)}
-
-						{company && (
-							<SocialLink>
-								<img src="/icons/company.svg" alt="Company" />
-								<span>{company}</span>
-							</SocialLink>
-						)}
-
-						{followers && (
-							<SocialLink>
-								<img src="/icons/followers.svg" alt="Followers" />
-								<span>
-									{followers} {followers > 1 ? 'Seguidores' : 'Seguidor'}
-								</span>
-							</SocialLink>
-						)}
-					</ProfileSocialContent>
-				</ProfileContent>
-			</div>
-		)
-	}
+					{followers && (
+						<SocialLink>
+							<img src="/icons/followers.svg" alt="Followers" />
+							<span>
+								{followers} {followers > 1 ? 'Seguidores' : 'Seguidor'}
+							</span>
+						</SocialLink>
+					)}
+				</ProfileSocialContent>
+			</ProfileContent>
+		</div>
+	)
+}
