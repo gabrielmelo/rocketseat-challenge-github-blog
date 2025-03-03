@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { useSearchParams } from 'react-router'
 import { getIssuesInRepository } from '../api/get-issues-repository'
 
 interface UseIssuesParams {
@@ -7,17 +8,16 @@ interface UseIssuesParams {
 	repo: string
 }
 
-export function useIssuesInRepository({
-	query,
-	username,
-	repo,
-}: UseIssuesParams) {
+export function useIssuesInRepository({ query, repo }: UseIssuesParams) {
+	const [searchParams] = useSearchParams()
+
+	const querySearch = searchParams.get('search')
+
 	const { data, isFetched, isLoading } = useQuery({
-		queryKey: ['issues'],
+		queryKey: ['issues', querySearch],
 		queryFn: async () =>
 			getIssuesInRepository({
 				query,
-				username,
 				repo,
 			}),
 	})

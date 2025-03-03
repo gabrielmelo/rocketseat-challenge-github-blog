@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router'
 import { Cover } from '../components/cover'
 import { PostCard } from '../components/post-card'
 import { Profile } from '../components/profile'
@@ -9,12 +10,16 @@ export function App() {
 	const REPO = 'rocketseat-challenge-github-blog'
 	const USERNAME = 'gabrielmelo'
 
+	const [searchParams] = useSearchParams()
+
 	const { data: profile } = useProfile({
 		username: USERNAME,
 	})
 
+	const querySearch = searchParams.get('search')
+
 	const { issues, totalCount, isLoading } = useIssuesInRepository({
-		query: '',
+		query: querySearch ?? '',
 		username: USERNAME,
 		repo: REPO,
 	})

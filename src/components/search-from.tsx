@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { useSearchParams } from 'react-router'
 import { z } from 'zod'
 
 interface SearchFormProps {
@@ -13,12 +14,29 @@ const searchFormSchema = z.object({
 type SearchFormBody = z.infer<typeof searchFormSchema>
 
 export function SearchForm({ totalCount }: SearchFormProps) {
+	const [searchParams, setSearchParams] = useSearchParams()
+
+	const search = searchParams.get('search')
+
 	const { register, handleSubmit } = useForm<SearchFormBody>({
 		resolver: zodResolver(searchFormSchema),
+		defaultValues: {
+			search: '',
+		},
 	})
 
 	function handleSearch({ search }: SearchFormBody) {
-		console.log(search)
+		setSearchParams((state) => {
+			state.set('search', search)
+			return state
+		})
+	}
+
+	function handleCleanSearch() {
+		setSearchParams((state) => {
+			state.delete('search')
+			return state
+		})
 	}
 
 	return (
