@@ -19,6 +19,10 @@
 	--color-accent: #3294f8;
 }
 
+body {
+	background-color: var(--color-blue-950);
+}
+
 h1,
 h2,
 h3,

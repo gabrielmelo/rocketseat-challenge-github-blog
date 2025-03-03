@@ -1,4 +1,5 @@
 import type { ComponentProps } from 'react'
+import { Logo } from './logo'
 
 export function Cover({ children }: ComponentProps<'div'>) {
 	return (
@@ -6,11 +7,9 @@ export function Cover({ children }: ComponentProps<'div'>) {
 			className="mb-36 flex h-72 w-full flex-col items-center bg-center bg-cover bg-no-repeat drop-shadow-lg"
 			style={{ backgroundImage: "url('/images/profile-bg.jpg')" }}
 		>
-			<div className="m-auto mt-16 h-[98px] w-[148px]">
-				<img src="/images/logo.svg" alt="" className="w-full object-fill" />
-			</div>
+			<Logo />
 
-			<div className="-mb-36">{children}</div>
+			<div>{children}</div>
 		</div>
 	)
 }

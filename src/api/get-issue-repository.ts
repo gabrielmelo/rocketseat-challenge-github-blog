@@ -1,26 +1,33 @@
+import { env } from '../env'
 import { api } from '../lib/axios'
 
+interface Assignee {
+	login: string
+}
+
 export interface Issue {
-	number: number
+	number: string
 	title: string
-	created_at: string
 	description?: string | null
+
+	comments: number
+	assignee: Assignee
+	created_at: string
+
 	body?: string
 }
 
 interface GetIssueInRepositoryParams {
-	username: string
-	repo: string
-	issueNumber: number
+	repo: string | undefined
+	number: string | undefined
 }
 
 export async function getIssueInRepository({
-	username,
 	repo,
-	issueNumber,
+	number,
 }: GetIssueInRepositoryParams) {
 	const response = await api.get<Issue>(
-		`/repos/${username}/repos/${repo}/issues/${issueNumber}`,
+		`/repos/${env.VITE_GITHUB_LOGIN}/${repo}/issues/${number}`,
 	)
 
 	return response.data
