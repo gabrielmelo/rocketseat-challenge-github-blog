@@ -1,4 +1,9 @@
-Este projeto é uma aplicação web desenvolvida como parte de um desafio da trilha de React da Rocketseat. A aplicação permite consultar perfis do GitHub, exibir informações do usuário e listar seus repositórios públicos. O projeto foi construído utilizando tecnologias modernas como **Vite.js**, **TailwindCSS**, **React Query**, **React Router**, **Zod**, **Axios** e **Date.js**.
+## Github Blog
+
+É um projeto desenvolvido para o desafio 3 da trilha de React da Rocketseat. 
+A aplicação permite consultar perfis do GitHub, exibir informações do usuário e listar issues de um repositório público. O projeto foi construído utilizando tecnologias modernas como **Vite.js**, **TailwindCSS**, **React Query**, **React Router**, **Zod**, **Axios** e **Date.js**.
+
+![Screenshot From 2025-03-02 22-12-19](https://github.com/user-attachments/assets/9f785714-fab4-445b-ab0e-0fce2528f34a)
 
 ## Funcionalidades
 - **Consulta de Perfil do GitHub**: Insira o nome de usuário do GitHub para buscar informações do perfil, como nome, foto, biografia, número de seguidores, seguindo e mais.
